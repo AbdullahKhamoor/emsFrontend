@@ -43,7 +43,7 @@ export const fetchDepartments = async () => {
 
     let departments;
     try {
-        const response = await axios.get('https://ems-backend-weld.vercel.app/api/department', {
+        const response = await axios.get('https://ems-backend-66z5.vercel.app/api/department', {
             headers: {
                 Authorization: `Bearer ${localStorage.getItem('token')}`
             }
@@ -69,7 +69,7 @@ export const getEmployees = async (id) => {
 
     let employees;
     try {
-        const response = await axios.get(`https://ems-backend-weld.vercel.app/api/employee/department/${id}`, {
+        const response = await axios.get(`https://ems-backend-66z5.vercel.app/api/employee/department/${id}`, {
             headers: {
                 Authorization: `Bearer ${localStorage.getItem('token')}`
             }
