@@ -27,7 +27,7 @@ const Setting = () => {
             setError("Password not matched");
         } else {
             try {
-                const response = await axios.put("http://localhost:5000/api/setting/change-password",
+                const response = await axios.put("https://ems-backend-66z5.vercel.app/api/setting/change-password",
                     setting,
                     {
                         headers: {

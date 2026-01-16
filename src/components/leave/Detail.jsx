@@ -35,7 +35,7 @@ const Detail = () => {
 
     const changeStatus = async (id, status) => {
         try {
-            const response = await axios.put(`http://localhost:5000/api/leave/${id}`, { status },
+            const response = await axios.put(`https://ems-backend-66z5.vercel.app/api/leave/${id}`, { status },
                 {
                     headers: {
                         Authorization: `Bearer ${localStorage.getItem('token')}`
