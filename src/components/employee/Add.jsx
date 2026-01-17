@@ -42,7 +42,12 @@ const Add = () => {
 
         const formDataObj = new FormData()
         Object.keys(formData).forEach((key) => {
-            formDataObj.append(key, formData[key])
+            // formDataObj.append(key, formData[key])
+            if (key === "image") {
+                formDataObj.append("image", formData[key]) // 🔴 must be File object
+            } else {
+                formDataObj.append(key, formData[key])
+            }
         })
 
 
