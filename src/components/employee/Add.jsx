@@ -25,10 +25,15 @@ const Add = () => {
     const handleChange = (e) => {
 
         const { name, value, files } = e.target
-        if (name === 'image') {
-            setFormData((prevData) => ({ ...prevData, [name]: files[0] }))
+        // if (name === 'image') {
+        //     setFormData((prevData) => ({ ...prevData, [name]: files[0] }))
+        // } else {
+        //     setFormData((prevData) => ({ ...prevData, [name]: value }))
+        // }
+        if (name === "image") {
+            setFormData({ ...formData, image: files[0] })
         } else {
-            setFormData((prevData) => ({ ...prevData, [name]: value }))
+            setFormData({ ...formData, [name]: value })
         }
     }
 
