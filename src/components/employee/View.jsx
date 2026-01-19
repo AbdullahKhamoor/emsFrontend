@@ -37,7 +37,7 @@ const View = () => {
                 </h2>
                 <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
                     <div>
-                        <img src={`https://ems-backend-66z5.vercel.app/${employee.userId.profileImage}`}
+                        <img src={employee.userId.profileImage}
                             className='rounded-full border w-72'
                             alt="" />
                     </div>
