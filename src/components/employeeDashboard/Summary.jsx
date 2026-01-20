@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { useParams } from 'react-router-dom'
-import { FaUser } from 'react-icons/fa'
+// import { FaUser } from 'react-icons/fa'
 import { useAuth } from '../../context/authContext'
 
 const Summary = () => {
@@ -39,7 +39,7 @@ const Summary = () => {
                 <div className='rounded flex bg-white'>
 
                     <div className={`text-3xl flex justify-center items-center bg-teal-600 text-white px-4`}>
-                        <FaUser />
+                        {/* <FaUser /> */}
                         <img src={employee.userId.profileImage} alt="" />
                     </div>
                     <div className='pl-4 py-1'>
