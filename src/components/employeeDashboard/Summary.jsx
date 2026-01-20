@@ -5,7 +5,7 @@ import { useAuth } from '../../context/authContext'
 
 const Summary = () => {
     const { user } = useAuth()
-
+    const { id } = useParams()
     const [employee, setEmployee] = useState(null)
 
     useEffect(() => {
