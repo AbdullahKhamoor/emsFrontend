@@ -40,7 +40,7 @@ const Summary = () => {
 
                     <div className={`text-3xl flex justify-center items-center bg-teal-600 text-white px-4`}>
                         {/* <FaUser /> */}
-                        <img src={employee.userId.profileImage} alt="" className='w-full h-full object-cover rounded-full' />
+                        <img src={employee.userId.profileImage} alt="" className='rounded-full w-10 h-10' />
                     </div>
                     <div className='pl-4 py-1'>
                         <p className='text-lg font-semibold'>Welcome Back</p>
