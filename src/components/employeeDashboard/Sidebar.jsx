@@ -13,7 +13,7 @@ const Sidebar = () => {
                 <h3 className='text-2xl text-center font-pacific'>Employee MS</h3>
             </div>
             <div>
-                <NavLink to="/employee-dashboard"
+                <NavLink to={`/employee-dashboard/summary/${user._id}`}
                     className={({ isActive }) => `${isActive ? "bg-teal-500 " : " "} flex items-center space-x-4  py-2.5 px-4 rounded`}
                     end
                 >
