@@ -17,7 +17,7 @@ const Login = () => {
         try {
 
             const response = await axios.post(
-                "https://ems-backend-66z5.vercel.app/api/auth/login",
+                "http://localhost:5000/api/auth/login",
                 { email, password }
             )
             if (response.data.success) {

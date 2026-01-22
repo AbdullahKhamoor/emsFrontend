@@ -13,7 +13,7 @@ const Summary = () => {
         const fetchEmployee = async () => {
 
             try {
-                const response = await axios.get(`https://ems-backend-66z5.vercel.app/api/employee/${id}`, {
+                const response = await axios.get(`http://localhost:5000/api/employee/${id}`, {
                     headers: {
                         Authorization: `Bearer ${localStorage.getItem('token')}`
                     }
