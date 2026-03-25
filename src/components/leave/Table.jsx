@@ -74,14 +74,14 @@ const Table = () => {
                             onChange={filterByInput}
                         />
                         <div className='space-x-3'>
-                            <button className='px-2 py-1 bg-teal-600 rounded text-white hover:bg-teal-700'
+                            <button className='px-2 py-1 bg-blue-800 rounded text-white hover:bg-blue-500'
                                 onClick={() => filterByButton("Pending")}
                             >
                                 Pending</button>
-                            <button className='px-2 py-1 bg-teal-600 rounded text-white hover:bg-teal-700'
+                            <button className='px-2 py-1 bg-blue-800 rounded text-white hover:bg-blue-500'
                                 onClick={() => filterByButton("Approved")}
                             >Approved</button>
-                            <button className='px-2 py-1 bg-teal-600 rounded text-white hover:bg-teal-700'
+                            <button className='px-2 py-1 bg-blue-800 rounded text-white hover:bg-blue-500'
                                 onClick={() => filterByButton("Rejected")}
                             >Rejected</button>
                         </div>

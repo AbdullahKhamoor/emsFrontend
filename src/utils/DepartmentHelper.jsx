@@ -46,7 +46,7 @@ export const DepartmentButtons = ({ Id, onDepartmentDelete }) => {
 
     return (
         <div className="flex space-x-3">
-            <button className="px-4  py-1 bg-teal-600 text-white"
+            <button className="px-4  py-1 bg-blue-800 text-white"
                 onClick={() => navigate(`/admin-dashboard/department/${Id}`)}
             >Edit</button>
             <button className="px-4  py-1 bg-red-600 text-white"

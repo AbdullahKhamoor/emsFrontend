@@ -169,6 +169,7 @@ const Add = () => {
                     <div>
                         <label className='block text-sm font-medium text-gray-700'>
                             Designation
+
                         </label>
                         <input
                             type="text"
@@ -258,7 +259,7 @@ const Add = () => {
 
                 <button
                     type='Submit'
-                    className='w-full mt-6 bg-teal-600 hover:bg-teal-700 text-white font-bold py-2 px-4 rounded'
+                    className='w-full mt-6 bg-blue-800 hover:bg-blue-500 text-white font-bold py-2 px-4 rounded'
 
                 >
                     Add Employee

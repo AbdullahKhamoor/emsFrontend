@@ -180,7 +180,7 @@ const Edit = () => {
 
                     <button
                         type='Submit'
-                        className='w-full mt-6 bg-teal-600 hover:bg-teal-700 text-white font-bold py-2 px-4 rounded'
+                        className='w-full mt-6 bg-blue-800 hover:bg-blue-500 text-white font-bold py-2 px-4 rounded'
                     >
                         Edit Employee
                     </button>

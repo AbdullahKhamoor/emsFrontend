@@ -2,6 +2,9 @@ import React, { useEffect, useState } from 'react'
 import { fetchDepartments, getEmployees } from '../../utils/EmployeeHelper'
 import axios from 'axios'
 import { useNavigate, } from 'react-router-dom'
+// import { useParams } from 'react-router-dom'
+// const { id } = useParams()
+
 
 const Add = () => {
 
@@ -19,7 +22,6 @@ const Add = () => {
 
     const navigate = useNavigate()
 
-
     useEffect(() => {
         const getDepartments = async () => {
             const departments = await fetchDepartments()
@@ -30,6 +32,7 @@ const Add = () => {
 
 
     const handleDepartment = async (e) => {
+        e.preventDefault()
         const emps = await getEmployees(e.target.value)
         setEmployees(emps)
     }
@@ -203,7 +206,7 @@ const Add = () => {
 
                     <button
                         type='Submit'
-                        className='w-full mt-6 bg-teal-600 hover:bg-teal-700 text-white font-bold py-2 px-4 rounded'
+                        className='w-full mt-6 bg-blue-800 hover:bg-blue-500 text-white font-bold py-2 px-4 rounded'
                     >
                         Add Salary
                     </button>

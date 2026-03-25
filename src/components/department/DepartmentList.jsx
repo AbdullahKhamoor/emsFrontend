@@ -74,7 +74,7 @@ const DepartmentList = () => {
                             className='px-4 py-0.5'
                             onChange={filterDepartments}
                         />
-                        <Link to="/admin-dashboard/add-department" className='px-4 py-1 bg-teal-600 rounded text-white' >Add New Department </Link>
+                        <Link to="/admin-dashboard/add-department" className='px-4 py-1 bg-blue-800 rounded text-white' >Add New Department </Link>
                     </div>
                     <div className='mt-5'>
                         <DataTable
