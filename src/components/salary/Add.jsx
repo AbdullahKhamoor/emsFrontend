@@ -41,7 +41,7 @@ const Add = () => {
         const fetchEmployee = async () => {
 
             try {
-                const response = await axios.get(`http://localhost:5000/api/employee${id}`, {
+                const response = await axios.get(`https://ems-backend-66z5.vercel.app/api/employee${id}`, {
                     headers: {
                         Authorization: `Bearer ${localStorage.getItem('token')}`
                     }
@@ -81,7 +81,7 @@ const Add = () => {
     const handleSubmit = async (e) => {
         e.preventDefault()
         try {
-            const response = await axios.post(`http://localhost:5000/api/salary/add`, salary, {
+            const response = await axios.post(`https://ems-backend-66z5.vercel.app/api/salary/add`, salary, {
                 headers: {
                     "Authorization": `Bearer ${localStorage.getItem('token')}`
                 }
