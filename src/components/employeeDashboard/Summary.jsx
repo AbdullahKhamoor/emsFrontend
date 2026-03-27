@@ -38,7 +38,7 @@ const Summary = () => {
             <div className='p-6'>
                 <div className='rounded flex bg-white'>
 
-                    <div className={`text-3xl flex justify-center items-center bg-teal-600 text-white px-4`}>
+                    <div className={`text-3xl flex justify-center items-center bg-blue-800  text-white px-4`}>
                         {/* <FaUser /> */}
                         <img src={employee.userId.profileImage} alt="" className='rounded-full w-15 h-15' />
                     </div>
