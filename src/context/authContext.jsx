@@ -1,4 +1,5 @@
-import axios from 'axios'
+// import axios from 'axios'
+import API from '../api/api.js'
 import { useContext, useEffect } from 'react'
 import { createContext } from 'react'
 import { useState } from 'react'
@@ -16,7 +17,7 @@ const authContext = ({ children }) => {
             try {
                 const token = localStorage.getItem('token')
                 if (token) {
-                    const response = await axios.get('https://ems-backend-66z5.vercel.app/api/auth/verify', {
+                    const response = await API.get('/api/auth/verify', {
                         headers: {
                             "Authorization": `Bearer ${localStorage.getItem("token")}`
                         },

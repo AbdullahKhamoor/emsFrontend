@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom"
-import axios from "axios"
+// import axios from "axios"
+import API from "../api/api"
 
 export const columns = [
     {
@@ -26,7 +27,7 @@ export const DepartmentButtons = ({ Id, onDepartmentDelete }) => {
         if (confirm) {
             try {
 
-                const response = await axios.delete(`https://ems-backend-66z5.vercel.app/api/department/${id}`, {
+                const response = await API.delete(`/api/department/${id}`, {
                     headers: {
                         Authorization: `Bearer ${localStorage.getItem('token')}`,
                     },

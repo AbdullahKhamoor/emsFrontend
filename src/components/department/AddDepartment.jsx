@@ -1,4 +1,5 @@
-import axios from 'axios';
+// import axios from 'axios';
+import API from '../../api/api';
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 
@@ -20,7 +21,7 @@ const AddDepartment = () => {
     const handleSubmit = async (e) => {
         e.preventDefault()
         try {
-            const response = await axios.post('https://ems-backend-66z5.vercel.app/api/department/add', department, {
+            const response = await API.post('/api/department/add', department, {
                 headers: {
                     "Authorization": `Bearer ${localStorage.getItem('token')}`
                 }

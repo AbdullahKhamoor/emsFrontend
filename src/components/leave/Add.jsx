@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import { useAuth } from '../../context/authContext'
 import { useNavigate } from 'react-router-dom'
-import axios from 'axios'
+// import axios from 'axios'
+import API from '../../api/api'
 
 const Add = () => {
     const { user } = useAuth()
@@ -20,7 +21,7 @@ const Add = () => {
     const handleSubmit = async (e) => {
         e.preventDefault()
         try {
-            const response = await axios.post(`https://ems-backend-66z5.vercel.app/api/leave/add`, leave,
+            const response = await API.post(`/api/leave/add`, leave,
                 {
                     headers: {
                         Authorization: `Bearer ${localStorage.getItem('token')}`

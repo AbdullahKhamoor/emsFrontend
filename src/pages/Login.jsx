@@ -1,4 +1,5 @@
-import axios from "axios"
+// import axios from "axios"
+import API from "../api/api.js"
 import { useState } from 'react'
 import { useAuth } from "../context/authContext"
 import { useNavigate } from "react-router-dom"
@@ -16,8 +17,8 @@ const Login = () => {
         e.preventDefault()
         try {
 
-            const response = await axios.post(
-                "https://ems-backend-66z5.vercel.app/api/auth/login",
+            const response = await API.post(
+                "/api/auth/login",
                 { email, password }
             )
             if (response.data.success) {

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
-import axios from 'axios'
+// import axios from 'axios
+import API from '../../api/api'
 
 const View = () => {
     const { id } = useParams()
@@ -10,7 +11,7 @@ const View = () => {
         const fetchEmployee = async () => {
 
             try {
-                const response = await axios.get(`https://ems-backend-66z5.vercel.app/api/employee/${id}`, {
+                const response = await API.get(`/api/employee/${id}`, {
                     headers: {
                         Authorization: `Bearer ${localStorage.getItem('token')}`
                     }

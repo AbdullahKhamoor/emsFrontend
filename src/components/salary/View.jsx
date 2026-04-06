@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
-import axios from 'axios'
+// import axios from 'axios'
+import API from '../../api/api';
 import { useAuth } from '../../context/authContext';
 
 const View = () => {
@@ -14,7 +15,7 @@ const View = () => {
     const fetchSalaries = async () => {
 
         try {
-            const response = await axios.get(`https://ems-backend-66z5.vercel.app/api/salary/${id}/${user.role}`, {
+            const response = await API.get(`/api/salary/${id}/${user.role}`, {
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem('token')}`
                 }

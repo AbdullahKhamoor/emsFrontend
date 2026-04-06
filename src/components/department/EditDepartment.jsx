@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
-import axios from 'axios'
+// import axios from 'axios'
+import API from '../../api/api'
 
 const EditDepartment = () => {
     const { id } = useParams()
@@ -12,7 +13,7 @@ const EditDepartment = () => {
         const fetchDepartments = async () => {
             setDeploading(true)
             try {
-                const response = await axios.get(`https://ems-backend-66z5.vercel.app/api/department/${id}`, {
+                const response = await API.get(`/api/department/${id}`, {
                     headers: {
                         Authorization: `Bearer ${localStorage.getItem('token')}`
                     }
@@ -42,7 +43,7 @@ const EditDepartment = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.put(`https://ems-backend-66z5.vercel/api/department/${id}`, department, {
+            const response = await API.put(`/api/department/${id}`, department, {
                 headers: {
                     "Authorization": `Bearer ${localStorage.getItem('token')}`
                 }

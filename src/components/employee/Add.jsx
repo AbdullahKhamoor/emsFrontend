@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { fetchDepartments } from '../../utils/EmployeeHelper'
-import axios from 'axios'
+// import axios from 'axios'
+import API from '../../api/api'
 import { useNavigate } from 'react-router-dom'
 
 const Add = () => {
@@ -44,7 +45,7 @@ const Add = () => {
         Object.keys(formData).forEach((key) => {
             // formDataObj.append(key, formData[key])
             if (key === "image") {
-                formDataObj.append("image", formData[key]) // 🔴 must be File object
+                formDataObj.append("image", formData[key])  //  must be File object
             } else {
                 formDataObj.append(key, formData[key])
             }
@@ -52,7 +53,7 @@ const Add = () => {
 
 
         try {
-            const response = await axios.post('https://ems-backend-66z5.vercel.app/api/employee/add', formDataObj, {
+            const response = await API.post('/api/employee/add', formDataObj, {
                 headers: {
                     "Authorization": `Bearer ${localStorage.getItem('token')}`,
                     "Content-Type": "multipart/form-data",

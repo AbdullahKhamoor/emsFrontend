@@ -1,7 +1,8 @@
 import React from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { useEffect, useState } from 'react';
-import axios from 'axios';
+// import axios from 'axios';
+import API from '../../api/api';
 import { useAuth } from '../../context/authContext';
 
 
@@ -14,7 +15,7 @@ const List = () => {
     const fetchLeaves = async () => {
 
         try {
-            const response = await axios.get(`https://ems-backend-66z5.vercel.app/api/leave/${id}/${user.role}`, {
+            const response = await API.get(`/api/leave/${id}/${user.role}`, {
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem('token')}`
                 }

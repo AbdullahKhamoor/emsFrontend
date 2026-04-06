@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import SummaryCard from './SummaryCard'
 import { FaBuilding, FaCheckCircle, FaFileAlt, FaHourglassHalf, FaMoneyBillWave, FaTimesCircle, FaUser } from 'react-icons/fa'
-import axios from 'axios'
+// import axios from 'axios'
+import API from '../../api/api.js'
 
 const AdminSummary = () => {
 
@@ -10,7 +11,7 @@ const AdminSummary = () => {
     useEffect(() => {
         const fetchSummary = async () => {
             try {
-                const summary = await axios.get('https://ems-backend-66z5.vercel.app/api/dashboard/summary', {
+                const summary = await API.get('/api/dashboard/summary', {
                     headers: {
                         "Authorization": `Bearer ${localStorage.getItem("token")}`
                     }

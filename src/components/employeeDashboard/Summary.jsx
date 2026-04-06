@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import axios from 'axios'
+// import axios from 'axios'
+import API from '../../api/api'
 import { useParams } from 'react-router-dom'
 // import { FaUser } from 'react-icons/fa'
 import { useAuth } from '../../context/authContext'
@@ -13,7 +14,7 @@ const Summary = () => {
         const fetchEmployee = async () => {
 
             try {
-                const response = await axios.get(`https://ems-backend-66z5.vercel.app/api/employee/${id}`, {
+                const response = await API.get(`/api/employee/${id}`, {
                     headers: {
                         Authorization: `Bearer ${localStorage.getItem('token')}`
                     }
@@ -40,7 +41,7 @@ const Summary = () => {
 
                     <div className={`text-3xl flex justify-center items-center bg-blue-800  text-white px-4`}>
                         {/* <FaUser /> */}
-                        <img src={employee.userId.profileImage} alt="" className='rounded-full w-15 h-15' />
+                        <img src={employee.userId.profileImage} alt="" className='rounded-full w-15 h-15 color-white' />
                     </div>
                     <div className='pl-4 py-1'>
                         <p className='text-lg font-semibold'>Welcome Back</p>

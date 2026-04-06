@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { fetchDepartments, getEmployees } from '../../utils/EmployeeHelper'
-import axios from 'axios'
+// import axios from 'axios'
+import API from '../../api/api'
 import { useNavigate, } from 'react-router-dom'
 // import { useParams } from 'react-router-dom'
 // const { id } = useParams()
@@ -41,7 +42,7 @@ const Add = () => {
         const fetchEmployee = async () => {
 
             try {
-                const response = await axios.get(`https://ems-backend-66z5.vercel.app/api/employee${id}`, {
+                const response = await API.get(`/api/employee${id}`, {
                     headers: {
                         Authorization: `Bearer ${localStorage.getItem('token')}`
                     }
@@ -81,7 +82,7 @@ const Add = () => {
     const handleSubmit = async (e) => {
         e.preventDefault()
         try {
-            const response = await axios.post(`https://ems-backend-66z5.vercel.app/api/salary/add`, salary, {
+            const response = await API.post(`/api/salary/add`, salary, {
                 headers: {
                     "Authorization": `Bearer ${localStorage.getItem('token')}`
                 }

@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
-import axios from 'axios';
+// import axios from 'axios';
+import API from '../../api/api';
 import { useNavigate } from 'react-router-dom'
 import { useAuth } from '../../context/authContext';
 
@@ -27,7 +28,7 @@ const Setting = () => {
             setError("Password not matched");
         } else {
             try {
-                const response = await axios.put("https://ems-backend-66z5.vercel.app/api/setting/change-password",
+                const response = await API.put("/api/setting/change-password",
                     setting,
                     {
                         headers: {
