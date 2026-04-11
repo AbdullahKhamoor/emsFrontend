@@ -63,19 +63,19 @@ const Table = () => {
     return (
         <>
             {filteredLeave ? (
-                <div className='p-6' >
+                <div className='md:w-120 lg:w-190 xl:w-280 p-6' >
                     <div className='text-center'>
                         <h3 className='text-2xl font-bold'>Manage Leave</h3>
                     </div>
-                    <div className='flex justify-between items-center'>
+                    <div className='flex justify-between items-center '>
                         <input
                             type="text"
                             placeholder='Search By Emp Id'
-                            className='px-4 py-0.5 border-neutral-50 bg-white'
+                            className='md:w-32 lg:w-40 xl:w-64 px-4 py-0.5 border-neutral-50 bg-white'
                             onChange={filterByInput}
                         />
-                        <div className='space-x-3'>
-                            <button className='px-2 py-1 bg-blue-800 rounded text-white hover:bg-blue-500'
+                        <div className='space-x-3 flex md:ml-1'>
+                            <button className=' md:w-19 px-2 py-1 bg-blue-800 rounded text-white hover:bg-blue-500'
                                 onClick={() => filterByButton("Pending")}
                             >
                                 Pending</button>
@@ -87,7 +87,7 @@ const Table = () => {
                             >Rejected</button>
                         </div>
                     </div>
-                    <div className='mt-3'>
+                    <div className='mt-3 w-80 md:w-120  lg:w-180 xl:w-280 overflow-x-auto lg:mt-1.5 xl:mt-0'>
                         <DataTable columns={columns} data={filteredLeave} pagination />
                     </div>
                 </div >
