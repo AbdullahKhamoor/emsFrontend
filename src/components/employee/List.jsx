@@ -61,22 +61,25 @@ const List = () => {
     }
 
     return (
-        <div className='p-6'>
+        <div className='w-80  md:w-120 lg:w-180 xl:w-280 p-6'>
             <div className='text-center'>
                 <h3 className='text-2xl font-bold'>Manage Employee</h3>
             </div>
-            <div className='flex justify-between items-center'>
+            <div className='flex justify-between items-center md:mt-1.5 lg:mt-0'>
                 <input
                     type="text"
                     placeholder='Search By Dep Name'
                     className='px-4 py-0.5'
                     onChange={handleFilter}
                 />
-                <Link to="/admin-dashboard/add-employee" className='px-4 py-1 bg-blue-800 rounded text-white' >
+                <Link to="/admin-dashboard/add-employee" className='px-4 py-1.5 bg-blue-800 rounded text-white' >
                     Add New Employee </Link>
             </div>
-            <div>
-                <DataTable columns={columns} data={filteredEmployee} pagination />
+
+            <div className='w-80 md:w-120  lg:w-180 xl:w-280 overflow-x-auto lg:mt-1.5 xl:mt-0 '>
+
+                <DataTable className='' columns={columns} data={filteredEmployee} pagination />
+
             </div>
         </div>
     )
