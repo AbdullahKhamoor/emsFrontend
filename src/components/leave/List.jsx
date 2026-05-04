@@ -1,5 +1,7 @@
 import React from 'react'
 import { Link, useParams } from 'react-router-dom'
+import { BeatLoader } from "react-spinners";
+
 import { useEffect, useState } from 'react';
 // import axios from 'axios';
 import API from '../../api/api';
@@ -22,6 +24,7 @@ const List = () => {
 
             })
             if (response.data.success) {
+                console.log(leaves)
                 setLeaves(response.data.leaves)
             }
         } catch (error) {
@@ -37,7 +40,13 @@ const List = () => {
     }, []);
 
     if (!leaves) {
-        return <div>Loading ...</div>
+        return (<div className='my-50 flex items-center justify-center  outline-none   '>
+            <BeatLoader
+                size={20}
+                color="blue"
+            />
+        </div>
+        )
     }
 
     return (

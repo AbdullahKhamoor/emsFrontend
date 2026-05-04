@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react'
+import { BeatLoader } from "react-spinners";
+
 import { useNavigate, useParams } from 'react-router-dom'
 // import axios from 'axios'
 import API from '../../api/api'
@@ -61,7 +63,12 @@ const EditDepartment = () => {
 
     return (
 
-        <> {depLoading ? <div>Loading.....</div> :
+        <> {depLoading ? <div className='my-50 flex items-center justify-center  outline-none   '>
+            <BeatLoader
+                size={20}
+                color="blue"
+            />
+        </div> :
             <div className='max-w-3xl mx-auto mt-10 bg-white p-8 rounded-md shadow-md w-96'>
                 <h2 className='text-2xl font-bold mb-6'>Edit Department</h2>
                 <form onSubmit={handleSubmit}>

@@ -1,6 +1,8 @@
 import React from 'react'
 import { useEffect, useState } from 'react';
 import DataTable from 'react-data-table-component';
+import { ClipLoader } from "react-spinners";
+
 import { columns, LeaveButton } from '../../utils/LeaveHelper';
 // import axios from 'axios';
 import API from '../../api/api';
@@ -91,7 +93,14 @@ const Table = () => {
                         <DataTable columns={columns} data={filteredLeave} pagination />
                     </div>
                 </div >
-            ) : <div> Loading .....</div>}
+            ) : <div className='my-50 flex items-center justify-center mx-auto'>
+                <ClipLoader
+                    size={100}
+                    color="blue"
+                    cssOverride={{
+                        borderWidth: "8px"
+                    }} />
+            </div>}
         </>
     )
 }

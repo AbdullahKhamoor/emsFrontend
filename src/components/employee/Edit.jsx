@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { BeatLoader } from "react-spinners";
 import { fetchDepartments } from '../../utils/EmployeeHelper'
 // import axios from 'axios'
 import API from '../../api/api'
@@ -187,7 +188,12 @@ const Edit = () => {
                     </button>
                 </form>
             </div>
-        ) : <div> Loading .....</div >} </>
+        ) : <div className='my-50 flex items-center justify-center  outline-none   '>
+            <BeatLoader
+                size={20}
+                color="blue"
+            />
+        </div>} </>
     )
 }
 

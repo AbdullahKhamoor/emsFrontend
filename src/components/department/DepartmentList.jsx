@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import DataTable from "react-data-table-component"
+import { ClipLoader } from "react-spinners";
 import { columns, DepartmentButtons } from '../../utils/DepartmentHelper'
 // import axios from 'axios'
 import API from '../../api/api'
@@ -63,7 +64,14 @@ const DepartmentList = () => {
 
     return (
         <>
-            {depLoading ? <div>Loading.....</div> :
+            {depLoading ? <div className='my-50 flex items-center justify-center mx-auto'>
+                <ClipLoader
+                    size={100}
+                    color="blue"
+                    cssOverride={{
+                        borderWidth: "8px"
+                    }} />
+            </div> :
                 <div className='p-5'>
                     <div className='text-center'>
                         <h3 className='text-2xl font-bold'>Manage Departments</h3>

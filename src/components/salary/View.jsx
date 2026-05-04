@@ -1,6 +1,8 @@
+import { BeatLoader } from "react-spinners";
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 // import axios from 'axios'
+
 import API from '../../api/api';
 import { useAuth } from '../../context/authContext';
 
@@ -50,7 +52,12 @@ const View = () => {
     return (
         <>
             {filteredSalaries === null ? (
-                <div>Loading .....</div>
+                <div className='my-50 flex items-center justify-center  outline-none   '>
+                    <BeatLoader
+                        size={20}
+                        color="blue"
+                    />
+                </div>
             ) : (
                 <div className='overflow-x-auto p-5'>
                     <div className='text-center'>

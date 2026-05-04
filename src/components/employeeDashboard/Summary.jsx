@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 // import axios from 'axios'
+import { ClipLoader } from "react-spinners";
 import API from '../../api/api'
 import { useParams } from 'react-router-dom'
 // import { FaUser } from 'react-icons/fa'
@@ -48,7 +49,14 @@ const Summary = () => {
                         <p className='text-xl font-bold'>{user.name}</p>
                     </div>
                 </div >
-            </div>) : <div>loading ...</div>}</>
+            </div>) : <div className='my-50 flex items-center justify-center mx-auto'>
+            <ClipLoader
+                size={100}
+                color="blue"
+                cssOverride={{
+                    borderWidth: "8px"
+                }} />
+        </div>}</>
     )
 }
 

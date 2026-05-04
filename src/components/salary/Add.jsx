@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { fetchDepartments, getEmployees } from '../../utils/EmployeeHelper'
+import { ClipLoader } from "react-spinners";
 // import axios from 'axios'
 import API from '../../api/api'
 import { useNavigate, } from 'react-router-dom'
@@ -213,7 +214,14 @@ const Add = () => {
                     </button>
                 </form>
             </div>
-        ) : <div> Loading .....</div >} </>
+        ) : <div className='my-50 flex items-center justify-center mx-auto'>
+            <ClipLoader
+                size={100}
+                color="blue"
+                cssOverride={{
+                    borderWidth: "8px"
+                }} />
+        </div>} </>
     )
 }
 

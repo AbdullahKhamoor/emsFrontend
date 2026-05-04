@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import SummaryCard from './SummaryCard'
+import { motion } from "framer-motion"
+import { ClipLoader } from "react-spinners";
 import { FaBuilding, FaCheckCircle, FaFileAlt, FaHourglassHalf, FaMoneyBillWave, FaTimesCircle, FaUser } from 'react-icons/fa'
 // import axios from 'axios'
 import API from '../../api/api.js'
@@ -17,6 +19,8 @@ const AdminSummary = () => {
                     }
                 })
                 setSummary(summary.data)
+                console.log(summary)
+                console.log(localStorage.getItem("token"))
             } catch (error) {
                 if (error.response) {
                     alert(error.response.data.error)
@@ -29,7 +33,20 @@ const AdminSummary = () => {
     }, [])
 
     if (!summary) {
-        return <div>Loading ...</div>
+        // return <motion.div animate={{ opacity: [0.3, 1, 0.3] }}
+        //     transition={{ repeat: Infinity, duration: 1 }}>
+        //     Loading ...
+        // </motion.div>
+        return (
+            <div className='my-50 flex items-center justify-center mx-auto'>
+                <ClipLoader
+                    size={100}
+                    color="blue"
+                    cssOverride={{
+                        borderWidth: "8px"
+                    }} />
+            </div>
+        )
     }
 
     return (
