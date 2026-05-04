@@ -77,9 +77,7 @@ const List = () => {
             </div>
 
             <div className='w-80 md:w-120  lg:w-180 xl:w-280 overflow-x-auto lg:mt-1.5 xl:mt-0 '>
-
-                <DataTable className='' columns={columns} data={filteredEmployee} pagination />
-
+                <DataTable columns={columns} data={filteredEmployee} pagination />
             </div>
         </div>
     )

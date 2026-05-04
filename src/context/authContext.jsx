@@ -39,8 +39,17 @@ const authContext = ({ children }) => {
                 setLoading(false)
             }
         }
+
         verifyUser()
     }, [])
+
+    const loginDemo = () => {
+        setUser({
+            id: "demo123",
+            email: "demo@ems.com",
+            role: "demo"
+        });
+    };
 
     const login = (user) => {
         setUser(user)
@@ -52,7 +61,7 @@ const authContext = ({ children }) => {
     }
     return (
         <>
-            <userContext.Provider value={{ user, login, logout, loading }}>
+            <userContext.Provider value={{ user, loginDemo, login, logout, loading }}>
                 {children}
             </userContext.Provider>
 

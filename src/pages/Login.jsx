@@ -9,6 +9,7 @@ const Login = () => {
     const [password, setPassword] = useState("")
     const [error, setError] = useState(null)
     const { login } = useAuth()
+    const { loginDemo } = useAuth();
     const navigate = useNavigate()
 
 
@@ -39,6 +40,21 @@ const Login = () => {
             }
         }
     }
+
+    const handleDemoLogin = () => {
+        localStorage.setItem("token", "demo-token");
+        localStorage.setItem("user", JSON.stringify({
+            id: "demo123",
+            email: "demo@ems.com",
+            role: "demo"
+        }));
+
+        loginDemo()
+
+        navigate("/admin-dashboard");
+    };
+
+
 
     return (
         <>
@@ -81,6 +97,7 @@ const Login = () => {
                         </div>
                         <div className='mb-4'>
                             <button className='w-full bg-blue-800 text-white py-2'>Login</button>
+                            <button className='w-full bg-blue-800 text-white mt-2 py-2' onClick={handleDemoLogin}> Demo Login </button>
                         </div>
 
 
