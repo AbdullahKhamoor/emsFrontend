@@ -54,7 +54,7 @@ const Add = () => {
                             className='mt-1 p-2 block w-full border border-gray-300 rounded-md'
                             required
                         >
-                            <option value="">Select Department</option>
+                            <option value="">Select Leaves</option>
                             <option value="Sick Leave">sick Leave</option>
                             <option value="Casual Leave">Casual Leave</option>
                             <option value="Annual Leave">Annual Leave</option>
